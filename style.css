@@ -1,64 +1,340 @@
-É ótimo que você esteja procurando criar código CSS para o seu site! Para te ajudar da melhor forma, preciso de um pouco mais de informação sobre o que você deseja estilizar.
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
-O CSS (Cascading Style Sheets) é a linguagem que usamos para dar "vida" aos elementos HTML, controlando cores, fontes, layouts, espaçamentos e muito mais.
-
-Para começar, aqui está um exemplo básico de código CSS que você pode usar como ponto de partida. Ele define alguns estilos gerais para o corpo do seu site e para os cabeçalhos:
-
-CSS
-
-/* Estilos globais para o corpo da página */
+/* Estilos Gerais */
 body {
-    font-family: Arial, sans-serif; /* Define a fonte principal para o texto */
-    margin: 0; /* Remove margens padrão do navegador */
-    padding: 20px; /* Adiciona um preenchimento interno ao redor do conteúdo */
-    background-color: #f4f4f4; /* Define uma cor de fundo clara para a página */
-    color: #333; /* Define a cor padrão do texto */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
 }
 
-/* Estilos para o cabeçalho principal (h1) */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
 h1 {
-    color: #0056b3; /* Define uma cor azul para o cabeçalho */
-    text-align: center; /* Centraliza o texto do cabeçalho */
-    margin-bottom: 30px; /* Adiciona espaço abaixo do cabeçalho */
+    font-size: 2.8em;
+    text-align: center;
+    color: #fff;
 }
 
-/* Estilos para os cabeçalhos secundários (h2) */
 h2 {
-    color: #007bff; /* Define uma cor azul um pouco diferente */
-    border-bottom: 1px solid #ddd; /* Adiciona uma linha inferior para destaque */
-    padding-bottom: 10px; /* Adiciona um preenchimento abaixo da linha */
-    margin-top: 40px; /* Adiciona espaço acima do cabeçalho */
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #34495e;
 }
 
-/* Estilos para parágrafos */
+h3 {
+    font-size: 1.6em;
+    color: #2980b9;
+}
+
 p {
-    line-height: 1.6; /* Aumenta o espaçamento entre as linhas para melhor leitura */
-    margin-bottom: 15px; /* Adiciona espaço abaixo de cada parágrafo */
+    margin-bottom: 15px;
 }
 
-/* Estilos para links */
 a {
-    color: #007bff; /* Define a cor padrão para links */
-    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: #2980b9;
+    text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre o link */
+    text-decoration: underline;
 }
 
-/* Estilos para um botão de exemplo */
-.botao {
-    background-color: #28a745; /* Cor de fundo verde */
-    color: white; /* Cor do texto branca */
-    padding: 10px 20px; /* Preenchimento interno */
-    border: none; /* Remove a borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Muda o cursor ao passar o mouse */
-    font-size: 16px; /* Tamanho da fonte */
-    display: inline-block; /* Permite definir largura e altura, e alinhamento */
-    margin-top: 20px; /* Espaço acima do botão */
+.btn {
+    display: inline-block;
+    background-color: #27ae60; /* Verde */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.botao:hover {
-    background-color: #218838; /* Escurece a cor ao passar o mouse */
+.btn:hover {
+    background-color: #229954;
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    background-color: #34495e; /* Azul escuro */
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    left: 0;
+    bottom: -5px;
+    transition: width .3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x600/556B2F/ffffff?text=Rebanho+Leiteiro') no-repeat center center/cover; /* Imagem de fundo */
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+#hero h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 60px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.content-section:last-of-type {
+    border-bottom: none;
+}
+
+.bg-light {
+    background-color: #ecf0f1; /* Cinza claro */
+}
+
+/* Grid Layouts */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.grid-item {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.grid-item h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.benefit-item {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.benefit-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2980b9;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #27ae60;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #229954;
+}
+
+/* Footer */
+footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    #hero h2 {
+        font-size: 2.5em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .grid-container, .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        padding: 60px 0;
+    }
+
+    #hero h2 {
+        font-size: 2em;
+    }
+
+    .content-section {
+        padding: 40px 0;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
 }
