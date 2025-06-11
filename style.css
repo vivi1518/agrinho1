@@ -1,0 +1,64 @@
+É ótimo que você esteja procurando criar código CSS para o seu site! Para te ajudar da melhor forma, preciso de um pouco mais de informação sobre o que você deseja estilizar.
+
+O CSS (Cascading Style Sheets) é a linguagem que usamos para dar "vida" aos elementos HTML, controlando cores, fontes, layouts, espaçamentos e muito mais.
+
+Para começar, aqui está um exemplo básico de código CSS que você pode usar como ponto de partida. Ele define alguns estilos gerais para o corpo do seu site e para os cabeçalhos:
+
+CSS
+
+/* Estilos globais para o corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte principal para o texto */
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 20px; /* Adiciona um preenchimento interno ao redor do conteúdo */
+    background-color: #f4f4f4; /* Define uma cor de fundo clara para a página */
+    color: #333; /* Define a cor padrão do texto */
+}
+
+/* Estilos para o cabeçalho principal (h1) */
+h1 {
+    color: #0056b3; /* Define uma cor azul para o cabeçalho */
+    text-align: center; /* Centraliza o texto do cabeçalho */
+    margin-bottom: 30px; /* Adiciona espaço abaixo do cabeçalho */
+}
+
+/* Estilos para os cabeçalhos secundários (h2) */
+h2 {
+    color: #007bff; /* Define uma cor azul um pouco diferente */
+    border-bottom: 1px solid #ddd; /* Adiciona uma linha inferior para destaque */
+    padding-bottom: 10px; /* Adiciona um preenchimento abaixo da linha */
+    margin-top: 40px; /* Adiciona espaço acima do cabeçalho */
+}
+
+/* Estilos para parágrafos */
+p {
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas para melhor leitura */
+    margin-bottom: 15px; /* Adiciona espaço abaixo de cada parágrafo */
+}
+
+/* Estilos para links */
+a {
+    color: #007bff; /* Define a cor padrão para links */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+}
+
+a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre o link */
+}
+
+/* Estilos para um botão de exemplo */
+.botao {
+    background-color: #28a745; /* Cor de fundo verde */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte */
+    display: inline-block; /* Permite definir largura e altura, e alinhamento */
+    margin-top: 20px; /* Espaço acima do botão */
+}
+
+.botao:hover {
+    background-color: #218838; /* Escurece a cor ao passar o mouse */
+}
