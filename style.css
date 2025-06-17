@@ -1,123 +1,241 @@
-/* Importação de fontes do Google Fonts */
-Certo! Para criar um arquivo style.css que você pode usar com fotos, na verdade, você não coloca as fotos diretamente no CSS. O CSS é usado para estilizar os elementos HTML que contêm as fotos.
+Com certeza! Vamos criar um arquivo style.css para estilizar uma página, incluindo uma galeria de fotos e uma seção dedicada à genética leiteira com um design atraente.
 
-Vou te dar um exemplo de um arquivo style.css completo, junto com um trecho de HTML (index.html) para você ver como eles se conectam.
+Para que tudo funcione perfeitamente, vou te dar o código CSS (style.css) e também um exemplo de como o HTML (index.html) deve estar estruturado para usar esses estilos.
 
 Arquivo: style.css
 CSS
 
 /* Estilos Gerais do Corpo da Página */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #f0f2f5; /* Um cinza claro suave */
+    padding: 0;
+    background-color: #f8fcf9; /* Um verde-azulado muito claro */
     color: #333;
     line-height: 1.6;
+}
+
+/* Cabeçalho da Página */
+header {
+    background-color: #4CAF50; /* Verde vibrante */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Seções Principais */
+.section-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-container h2 {
+    color: #2e7d32; /* Verde mais escuro */
+    font-size: 2em;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #66bb6a; /* Linha de destaque */
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* --- */
+
+/* Estilos da Galeria de Fotos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    background-color: #f0fdf2; /* Verde muito claro para os itens */
+    border: 1px solid #c8e6c9; /* Borda suave */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
-}
-
-/* Título Principal */
-h1 {
-    color: #2c3e50; /* Azul escuro */
-    margin-bottom: 40px;
-    font-size: 2.5em;
-    text-align: center;
-    border-bottom: 2px solid #3498db; /* Uma borda azul de destaque */
-    padding-bottom: 10px;
-}
-
-/* Contêiner da Galeria */
-.gallery-container {
-    display: grid;
-    /* Define colunas responsivas: mínimo de 280px por item, máximo de preenchimento do espaço disponível */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; /* Espaçamento entre os itens da grade */
-    max-width: 1200px; /* Largura máxima da galeria */
-    margin: 20px auto; /* Centraliza o contêiner e adiciona margem superior/inferior */
-    padding: 25px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
-}
-
-/* Estilo de Cada Item da Galeria (onde a foto e legenda ficam) */
-.gallery-item {
-    background-color: #fdfdfd;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden; /* Garante que a imagem arredondada não vaze */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra suave */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column; /* Organiza imagem e legenda verticalmente */
 }
 
 .gallery-item:hover {
-    transform: translateY(-8px); /* Efeito de "levitar" ao passar o mouse */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilo das Imagens dentro da Galeria */
 .gallery-item img {
-    width: 100%; /* A imagem ocupa 100% da largura do seu contêiner */
-    height: 220px; /* Altura fixa para todas as imagens */
-    object-fit: cover; /* Faz a imagem cobrir a área sem distorcer, cortando se necessário */
-    display: block; /* Remove espaço extra abaixo da imagem */
-    border-bottom: 1px solid #eee; /* Linha sutil abaixo da imagem */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-/* Estilo das Legendas das Fotos */
 .gallery-caption {
     padding: 15px;
-    font-size: 1.1em;
+    font-size: 1.05em;
     font-weight: bold;
-    color: #34495e; /* Cor escura para a legenda */
+    color: #4CAF50; /* Verde da marca */
     text-align: center;
-    background-color: #ecf0f1; /* Fundo cinza claro para a legenda */
-    flex-grow: 1; /* Permite que a legenda ocupe o espaço restante */
+    background-color: #e8f5e9; /* Fundo mais claro para a legenda */
+    flex-grow: 1;
     display: flex;
-    align-items: center; /* Centraliza verticalmente o texto */
-    justify-content: center; /* Centraliza horizontalmente o texto */
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- */
+
+/* Estilos da Aba de Genética Leiteira */
+.dairy-genetics-tab {
+    background-color: #e0f2f7; /* Azul claro suave */
+    border: 1px solid #b3e5fc; /* Borda azul mais escura */
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: all 0.4s ease; /* Transição para efeitos de hover */
+}
+
+.dairy-genetics-tab:hover {
+    background-color: #cfe9f2; /* Levemente mais escuro no hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dairy-genetics-tab h3 {
+    color: #0288d1; /* Azul vibrante */
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #4fc3f7;
+    padding-bottom: 10px;
+}
+
+.dairy-genetics-tab p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.dairy-genetics-tab ul {
+    list-style: none; /* Remove os marcadores padrão */
+    padding: 0;
+    margin-top: 20px;
+}
+
+.dairy-genetics-tab ul li {
+    background-color: #bbdefb; /* Azul claro para os itens da lista */
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.dairy-genetics-tab ul li:before {
+    content: "🐄"; /* Ícone de vaca para os itens da lista */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.dairy-genetics-tab strong {
+    color: #01579b; /* Azul mais escuro para destaque */
+}
+
+/* --- */
+
+/* Rodapé */
+footer {
+    background-color: #388e3c; /* Verde escuro */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos Responsivos */
 @media (max-width: 768px) {
-    body {
-        padding: 10px;
+    header h1 {
+        font-size: 2.2em;
     }
 
-    h1 {
-        font-size: 2em;
-        margin-bottom: 30px;
-    }
-
-    .gallery-container {
+    .section-container {
+        margin: 20px auto;
         padding: 15px;
-        gap: 20px;
+    }
+
+    .section-container h2 {
+        font-size: 1.8em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
     }
 
     .gallery-item img {
-        height: 180px; /* Altura menor em telas menores */
+        height: 180px;
     }
 
     .gallery-caption {
-        font-size: 1em;
+        font-size: 0.95em;
         padding: 12px;
+    }
+
+    .dairy-genetics-tab {
+        padding: 20px;
+    }
+
+    .dairy-genetics-tab h3 {
+        font-size: 1.5em;
+    }
+
+    .dairy-genetics-tab p {
+        font-size: 1em;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
+    header h1 {
         font-size: 1.8em;
     }
-    .gallery-container {
+
+    .section-container {
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .section-container h2 {
+        font-size: 1.5em;
+    }
+
+    .gallery-grid {
         grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
     }
+
     .gallery-item img {
-        height: 150px; /* Altura ainda menor para mobile */
+        height: 160px;
+    }
+
+    .dairy-genetics-tab {
+        padding: 15px;
     }
 }
+
